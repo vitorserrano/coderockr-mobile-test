@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "coderockr-mobile-test",
+    "name": "Coderockr Mobile Test",
     "slug": "coderockr-mobile-test",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
