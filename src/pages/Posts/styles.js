@@ -5,7 +5,7 @@ export const Wrapper = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const Container = styled.ScrollView``;
+export const Container = styled.View``;
 
 export const Header = styled.View`
   height: 100px;
@@ -21,4 +21,7 @@ export const Title = styled.Text`
   font-weight: 500;
   font-size: 22px;
   color: #333333;
+  font-family: 'Roboto_500Medium';
 `;
+
+export const ListPosts = styled.FlatList``;
