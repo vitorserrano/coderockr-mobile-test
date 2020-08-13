@@ -6,8 +6,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const Icon = (props) => {
   return (
-    <Container>
-      <MaterialIcons name={props.name} size={28} color="#F2994A" />
+    <Container borderColor={props.color}>
+      <MaterialIcons name={props.name} size={28} color={props.color} />
     </Container>
   );
 };
