@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Posts from './pages/Posts';
 import Details from './pages/Details';
+import Contact from './pages/Contact';
 
 import Icon from './components/Icon';
 
@@ -14,7 +15,7 @@ const icons = {
   Posts: {
     name: 'web',
   },
-  Details: {
+  Contact: {
     name: 'chat',
   },
 };
@@ -41,7 +42,12 @@ const Routes = () => {
         }}
       >
         <Tab.Screen name="Posts" component={Posts} />
-        <Tab.Screen name="Details" component={Details} />
+        <Tab.Screen
+          name="Details"
+          component={Details}
+          options={{ tabBarButton: () => null }}
+        />
+        <Tab.Screen name="Contact" component={Contact} />
       </Tab.Navigator>
     </NavigationContainer>
   );
