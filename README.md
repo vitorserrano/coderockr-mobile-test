@@ -59,6 +59,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O layout proposto para o teste está disponível no [Figma](https://www.figma.com/file/LA0NAQljFwhY8KfDUijKVBhF/Coderockr-Mobile-Test)
 
+## :iphone: Resultado
+
+<img src=".github/Posts.png" width="250">
+<img src=".github/Details.png" width="250">
+<img src=".github/Contact.png" width="250">
+
 ## :fire: Pré-requisitos
 
 Para rodar este projeto, é necessário ter instalado na sua máquina as seguntes tecnologias:
