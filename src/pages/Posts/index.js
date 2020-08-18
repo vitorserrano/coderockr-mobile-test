@@ -1,14 +1,29 @@
 import React, { useState, useEffect } from 'react';
 
-import { Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Wrapper, Container, Header, Title, ListPosts } from './styles';
+import {
+  Wrapper,
+  Container,
+  Header,
+  RouteName,
+  List,
+  ListPostsWhite,
+  ListPostsGrey,
+  ImageCover,
+  Description,
+  Author,
+  Title,
+  Article,
+} from './styles';
 
 import Icon from '../../components/Icon';
 
 import api from '../../services/api';
 
 const Posts = () => {
+  const navigation = useNavigation();
+
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -28,24 +43,61 @@ const Posts = () => {
     loadPosts();
   }, []);
 
+  handleNavigateToDetails = (post) => {
+    navigation.navigate('Details', { post });
+  };
+
   return (
     <Wrapper>
       <Container>
         <Header>
-          <Title>Posts</Title>
+          <RouteName>Posts</RouteName>
+
           <Icon name="add" color="#F2994A" />
         </Header>
-
-        <ListPosts
+        <List
           data={posts}
-          style={{
-            marginTop: 20,
-          }}
           keyExtractor={(post) => String(post.id)}
           showsVerticalScrollIndicator={true}
           onEndReached={loadPosts}
           onEndReachedThreshold={0.1}
-          renderItem={({ item: post }) => <Text>{post.author}</Text>}
+          renderItem={({ item: post, index }) => (
+            <>
+              {index % 2 == 0 && (
+                <ListPostsWhite onPress={() => handleNavigateToDetails(post)}>
+                  <ImageCover
+                    source={{
+                      uri: post.imageUrl,
+                    }}
+                  />
+
+                  <Description>
+                    <Author>{post.author}</Author>
+                    <Title>{post.title}</Title>
+
+                    <Article>{post.article.replace('<p>', '')}</Article>
+                  </Description>
+                </ListPostsWhite>
+              )}
+
+              {index % 2 != 0 && (
+                <ListPostsGrey onPress={() => handleNavigateToDetails(post)}>
+                  <Description>
+                    <Author>{post.author}</Author>
+                    <Title>{post.title}</Title>
+
+                    <Article>{post.article.replace('<p>', '')}</Article>
+                  </Description>
+
+                  <ImageCover
+                    source={{
+                      uri: post.imageUrl,
+                    }}
+                  />
+                </ListPostsGrey>
+              )}
+            </>
+          )}
         />
       </Container>
     </Wrapper>
