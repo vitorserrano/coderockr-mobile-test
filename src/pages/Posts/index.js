@@ -15,6 +15,7 @@ import {
   Author,
   Title,
   Article,
+  Stars,
 } from './styles';
 
 import Icon from '../../components/Icon';
@@ -28,6 +29,52 @@ const Posts = () => {
 
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
+
+  const starsWhite = [
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star-border',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star-border',
+    },
+  ];
+
+  const starsGrey = [
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star',
+    },
+    {
+      key: Math.random(String()),
+      name: 'star-border',
+    },
+  ];
 
   async function loadPosts() {
     const response = await api.get('/articles', {
@@ -45,8 +92,8 @@ const Posts = () => {
     loadPosts();
   }, []);
 
-  handleNavigateToDetails = (post) => {
-    navigation.navigate('Details', { post });
+  handleNavigateToDetails = (post, stars) => {
+    navigation.navigate('Details', { post, stars });
   };
 
   return (
@@ -66,7 +113,9 @@ const Posts = () => {
           renderItem={({ item: post, index }) => (
             <>
               {index % 2 == 0 && (
-                <ListPostsWhite onPress={() => handleNavigateToDetails(post)}>
+                <ListPostsWhite
+                  onPress={() => handleNavigateToDetails(post, starsWhite)}
+                >
                   <ImageCover
                     source={{
                       uri: post.imageUrl,
@@ -76,21 +125,41 @@ const Posts = () => {
                   <Description>
                     <Author>{post.author}</Author>
                     <Title>{post.title}</Title>
-
                     <Article>{post.article.replace('<p>', '')}</Article>
 
-                    <MaterialIcons name="star" size={24} color="black" />
+                    <Stars>
+                      {starsWhite.map((star) => (
+                        <MaterialIcons
+                          key={star.key}
+                          name={star.name}
+                          size={24}
+                          color="#f1a10a"
+                        />
+                      ))}
+                    </Stars>
                   </Description>
                 </ListPostsWhite>
               )}
 
               {index % 2 != 0 && (
-                <ListPostsGrey onPress={() => handleNavigateToDetails(post)}>
+                <ListPostsGrey
+                  onPress={() => handleNavigateToDetails(post, starsGrey)}
+                >
                   <Description>
                     <Author>{post.author}</Author>
                     <Title>{post.title}</Title>
-
                     <Article>{post.article.replace('<p>', '')}</Article>
+
+                    <Stars>
+                      {starsGrey.map((star) => (
+                        <MaterialIcons
+                          key={star.key}
+                          name={star.name}
+                          size={24}
+                          color="#f1a10a"
+                        />
+                      ))}
+                    </Stars>
                   </Description>
 
                   <ImageCover

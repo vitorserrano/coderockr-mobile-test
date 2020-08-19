@@ -17,6 +17,7 @@ import {
   Info,
   Name,
   Article,
+  Stars,
 } from './styles';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -27,7 +28,7 @@ const Details = () => {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const { post } = route.params;
+  const { post, stars } = route.params;
 
   const points = [
     {
@@ -86,6 +87,17 @@ const Details = () => {
             <Info>Posted by: </Info>
             <Name>{post.author}</Name>
           </Author>
+
+          <Stars>
+            {stars.map((star) => (
+              <MaterialIcons
+                key={star.key}
+                name={star.name}
+                size={24}
+                color="#f1a10a"
+              />
+            ))}
+          </Stars>
 
           <Article>{post.article}</Article>
         </Description>

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const ModalWrapper = styled.View`
+export const ModalWrapper = styled.ScrollView`
   flex: 1;
 `;
 

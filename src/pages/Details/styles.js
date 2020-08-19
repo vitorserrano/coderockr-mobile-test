@@ -77,3 +77,8 @@ export const Article = styled.Text`
   font-family: 'Roboto_400Regular';
   font-size: 16px;
 `;
+
+export const Stars = styled.View`
+  margin-top: 20px;
+  flex-direction: row;
+`;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-native';
 
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   ModalWrapper,
@@ -21,26 +21,16 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const Contact = () => {
   const navigation = useNavigation();
-  const route = useRoute();
-
-  console.log(route.params);
-
   const [modalVisible, setModalVisible] = useState(true);
 
-  handleNavigateToPosts = () => {
-    setModalVisible(false);
-
-    navigation.navigate('Posts');
-    setModalVisible(true);
-  };
-
   useEffect(() => {
-    return () => {
+    handleNavigateToPosts = () => {
+      setModalVisible(false);
+
+      navigation.navigate('Posts');
       setModalVisible(true);
     };
-  }, []);
-
-  // useEffect()
+  }, [modalVisible]);
 
   return (
     <Modal animationType="slide" transparent={true} visible={modalVisible}>

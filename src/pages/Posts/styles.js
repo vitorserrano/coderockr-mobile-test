@@ -153,3 +153,8 @@ export const ModalButtonSubmitTitle = styled.Text`
   color: #fff;
   margin-left: 14px;
 `;
+
+export const Stars = styled.View`
+  margin-top: 6px;
+  flex-direction: row;
+`;
