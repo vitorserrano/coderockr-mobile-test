@@ -61,9 +61,11 @@ O layout proposto para o teste está disponível no [Figma](https://www.figma.co
 
 ## :iphone: Resultado
 
-<img src=".github/Posts.png" width="250">
-<img src=".github/Details.png" width="250">
-<img src=".github/Contact.png" width="250">
+<h1 align="center">
+  <img src=".github/Posts.jpeg" width="250">
+  <img src=".github/Details.jpeg" width="250">
+  <img src=".github/Contact.jpeg" width="250">
+</h1>
 
 ## :fire: Pré-requisitos
 
