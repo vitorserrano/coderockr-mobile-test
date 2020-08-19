@@ -21,6 +21,8 @@ import Icon from '../../components/Icon';
 
 import api from '../../services/api';
 
+import { MaterialIcons } from '@expo/vector-icons';
+
 const Posts = () => {
   const navigation = useNavigation();
 
@@ -76,6 +78,8 @@ const Posts = () => {
                     <Title>{post.title}</Title>
 
                     <Article>{post.article.replace('<p>', '')}</Article>
+
+                    <MaterialIcons name="star" size={24} color="black" />
                   </Description>
                 </ListPostsWhite>
               )}

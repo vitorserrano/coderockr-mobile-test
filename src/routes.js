@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Posts from './pages/Posts';
@@ -21,6 +21,8 @@ const icons = {
 };
 
 const Routes = () => {
+  const navigation = useNavigation();
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -42,12 +44,22 @@ const Routes = () => {
         }}
       >
         <Tab.Screen name="Posts" component={Posts} />
+
         <Tab.Screen
           name="Details"
           component={Details}
           options={{ tabBarButton: () => null }}
         />
-        <Tab.Screen name="Contact" component={Contact} />
+
+        <Tab.Screen
+          name="Contact"
+          component={Contact}
+          listeners={{
+            tabPress: (event) => {
+              navigation.setParams('isModalVisible', true);
+            },
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
