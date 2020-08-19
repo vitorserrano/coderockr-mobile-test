@@ -62,6 +62,12 @@ O layout proposto para o teste está disponível no [Figma](https://www.figma.co
 ## :iphone: Resultado
 
 <h1 align="center">
+  <img src=".github/Video.gif" width="350">
+</h1>
+
+## :iphone: Screens
+
+<h1 align="center">
   <img src=".github/Posts.png" width="250">
   <img src=".github/Details.png" width="250">
   <img src=".github/Contact.jpeg" width="250">

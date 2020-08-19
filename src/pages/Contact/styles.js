@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const ModalWrapper = styled.ScrollView`
   flex: 1;
+  margin-top: 25px;
 `;
 
 export const ModalContainer = styled.View`
