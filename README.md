@@ -42,6 +42,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React Native](https://reactnative.dev/)
   - Framework para desenvolver aplicativos hibridos de forma nativa com JavaScript.
+- [React Navigation](https://reactnavigation.org/)
+  - O **React Navigation** serve para fazer o roteamento e navegação para apps feitos com React Native.
 - [Expo](https://expo.io/)
   - O **Expo** é um framework que facilita o desenvolvimento do projeto.
   - Ele já nos trás algumas ferramentas já configuradas, como por exemplo o **expo vector-icons**
